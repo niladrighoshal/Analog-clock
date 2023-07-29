@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    background: #2f363e;
+
+}
+.clock
+{
+    position: relative;
+    width: 280px;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scale: 2;
+    box-shadow: inset 5px 5px 25px rgba(0, 0, 0, 0.25);
+    border-radius: 50%;
+}
+
+.clock::before
+{
+    content: '';
+    position: absolute;
+    height: 5px;
+    width: 5px;
+    background: #2f363e;
+    z-index: 10000;
+    border: 1px solid #ffffff;
+    border-radius: 50%
+}
+
+#time
+{
+    position:relative;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#time .circle
+{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#time .circle svg
+{
+    position: relative;
+    transform: rotate(270deg);
+
+}
+
+#time .circle:nth-child(1) svg
+{
+    width: 250px;
+    height: 250px;
+
+}
+#time .circle:nth-child(2) svg
+{
+    width: 210px;
+    height: 210px;
+    
+}
+#time .circle:nth-child(3) svg
+{
+    width: 170px;
+    height: 170px;
+    
+}
+#time .circle svg circle
+{
+    width: 100%;
+    height: 100%;
+    fill: transparent;
+    stroke-width: 5;
+    stroke: var(--clr);
+    transform: translate(5px, 5px);
+    opacity: 0.25;
+}
+#time .circle:nth-child(1) svg circle
+{
+    stroke-dasharray: 760;
+    stroke-dashoffset: 760;
+}
+#time .circle:nth-child(2) svg circle
+{
+    stroke-dasharray: 630;
+    stroke-dashoffset: 630;
+}
+#time .circle:nth-child(3) svg circle
+{
+    stroke-dasharray: 510;
+    stroke-dashoffset: 510;
+}
+
+.dots
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    z-index: 10;
+}
+
+.dots::before
+{
+    content: '';
+    position: absolute;
+    top: -3px;
+    width: 15px;
+    height: 15px;
+    background: var(--clr);
+    border-radius: 50%;
+    box-shadow: 0 0 20px var(--clr),
+    0 0 40px var(--clr);
+}
+
+.niddles
+{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 10;
+}
+
+
+/* neediles of sec and hr */
+.niddles i 
+{
+    position: absolute;
+    width: 2px;
+    background: var(--clr2);
+    height: 50%;
+    opacity: 0.50;
+    border-radius: 6px;
+    transform-origin: bottom;
+    transform: scaleY(0.5);
+
+}
+
+.niddles.niddle2
+{
+    width: 170px;
+    height: 170px;
+    z-index: 9;
+    border: transparent;
+    border-radius: 2px;
+}
+
+/* niddles of sec hand */
+.niddles i{
+    width: 1px;
+    border: none;
+    border-radius: 30%;
+}
+
+/* niddles of min hand */
+.niddles.niddle2 i{
+    width: 2px;
+    border: none;
+    border-radius: 40%;
+}
+
+
+/* niddles of hr hand */
+.niddles.niddle3 i{
+    width: 3px;
+    border: none;
+    border-radius: 50%;
+}
+
+
+.niddles.niddle3
+{
+    width: 140px;
+    height: 140px;
+    z-index: 9;
+}
+
+.niddles.niddle32 i{
+    width: 4px;
+}
+
+#time span
+{
+    position: absolute;
+    inset: 55px;
+    text-align: center;
+    color: #c6bebe;
+    font-family: poppins;
+    transform: rotate(calc(30deg * var(--i)));
+}
+#time span b{
+    font-size: 0.75em;
+    font-weight: 500;
+    display: inline-block;
+}
+
+
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -50;
+    
+  }
+
+/* Mobile-specific styles using media query */
+@media screen and (max-width: 600px) {
+    body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px; /* Add padding to keep the clock within the screen */
+        overflow: hidden; /* Hide any content that overflows */
+    }
+
+    .clock {
+        width: 100%; /* Adjust the size of the clock for smaller screens */
+        max-width: 260px; /* Set a maximum width for larger screens */
+        height: auto; /* Auto-adjust height to maintain aspect ratio */
+        box-shadow: inset 5px 5px 25px rgba(0, 0, 0, 0.25); /* Adjust the box shadow */
+        display: flex; /* Use flexbox to center the clock both horizontally and vertically */
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto; /* Center the clock horizontally with auto margins */
+        transform-origin: center; /* Set the transform origin to center */
+        transform: scale(0.6); /* Apply scaling to make it more zoomed-out */
+        margin-left: 20px;
+        margin-right: 20px;
+        padding: 10px;
+    }
+
+    /* Modify other styles as needed for smaller screens */
+    /* For example, adjust font sizes, spacings, and positions for better readability */
+    /* You may also consider hiding certain elements on small screens */
+
+    #particles-js {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -50;
+    }
+}
+
+
+
+
+
+
+
+
+
