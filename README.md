@@ -1,8 +1,8 @@
-# Analog Clock by Niladri Ghoshal
+# [Analog Clock by Niladri Ghoshal](https://ng-analog-clock.netlify.app/)
 
 ![Banner](./image.png)
 
-This is a simple analog clock designed and developed by Niladri Ghoshal. The clock displays the current time in hours, minutes, and seconds using rotating hands and dots, giving it a classic analog clock look. It is built using HTML, CSS, and JavaScript.
+This is a [simple analog clock](https://ng-analog-clock.netlify.app/) designed and developed by Niladri Ghoshal. The clock displays the current time in hours, minutes, and seconds using rotating hands and dots, giving it a classic analog clock look. It is built using HTML, CSS, and JavaScript.
 
 ## Preview
 
